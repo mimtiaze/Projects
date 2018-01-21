@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#addItemToTable" prefHeight="500.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SeeRequestAdminController">
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="858.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForChooseCourseMenuItem" text="Choose course" />
+                  <MenuItem mnemonicParsing="false" text="See request" />
+                  <MenuItem mnemonicParsing="false" text="List of not enrolled faculty" />
+                  <MenuItem mnemonicParsing="false" text="List of enrolled faculty" />
+                  <MenuItem mnemonicParsing="false" text="Sections not enrlled" />
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <TableView fx:id="facultyNameTable" layoutX="30.0" layoutY="79.0" prefHeight="351.0" prefWidth="209.0">
+         <columns>
+            <TableColumn fx:id="nameOfFaculty" editable="false" prefWidth="207.99998474121094" resizable="false" text="Name Of Faculty" />
+         </columns></TableView>
+      <Button layoutX="30.0" layoutY="448.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="137.0" text="Assign as previous" />
+      <TableView fx:id="detailsTable" layoutX="264.0" layoutY="79.0" prefHeight="351.0" prefWidth="564.0">
+        <columns>
+          <TableColumn prefWidth="185.0" text="Subjrct" />
+          <TableColumn prefWidth="58.0" text="Sec" />
+            <TableColumn prefWidth="122.0" text="Time" />
+            <TableColumn prefWidth="70.0" text="Day" />
+            <TableColumn prefWidth="128.0" text="Room" />
+        </columns>
+      </TableView>
+      <Label layoutX="264.0" layoutY="46.0" text="Details :" />
+      <Label fx:id="copyRightLabel" layoutX="239.0" layoutY="478.0" prefHeight="17.0" prefWidth="458.0" />
+      <Button layoutX="681.0" layoutY="448.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="147.0" text="Assign all as previous" />
+      <Button layoutX="521.0" layoutY="448.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="147.0" text="Assign this as previous" />
+   </children>
+</AnchorPane>

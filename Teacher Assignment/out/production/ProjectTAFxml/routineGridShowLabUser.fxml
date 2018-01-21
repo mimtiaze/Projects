@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.TilePane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#mouseMoveAction" prefHeight="500.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RoutineGridShowLabUserController">
+    <children>
+      <TilePane hgap="5.0" layoutX="80.0" layoutY="219.0" prefHeight="207.0" prefWidth="766.0" vgap="5.0">
+         <children>
+            <ComboBox fx:id="TheoryButtonDay1Time1" onAction="#actionForTheoryButtonDay1Time1" prefHeight="48.0" prefWidth="185.0" />
+            <ComboBox fx:id="TheoryButtonDay1Time3" onAction="#actionForTheoryButtonDay1Time3" prefHeight="48.0" prefWidth="185.0" />
+            <ComboBox fx:id="TheoryButtonDay1Time5" onAction="#actionForTheoryButtonDay1Time5" prefHeight="48.0" prefWidth="185.0" />
+            <ComboBox fx:id="TheoryButtonDay1Time7" onAction="#actionForTheoryButtonDay1Time7" prefHeight="48.0" prefWidth="185.0" />
+            <ComboBox fx:id="TheoryButtonDay2Time1" onAction="#actionForTheoryButtonDay2Time1" prefHeight="48.0" prefWidth="185.0" />
+            <ComboBox fx:id="TheoryButtonDay2Time3" onAction="#actionForTheoryButtonDay2Time3" prefHeight="48.0" prefWidth="185.0" />
+            <ComboBox fx:id="TheoryButtonDay2Time5" onAction="#actionForTheoryButtonDay2Time5" prefHeight="48.0" prefWidth="185.0" />
+            <ComboBox fx:id="TheoryButtonDay2Time7" onAction="#actionForTheoryButtonDay2Time7" prefHeight="48.0" prefWidth="185.0" />
+            <ComboBox fx:id="TheoryButtonDay3Time1" onAction="#actionForTheoryButtonDay3Time1" prefHeight="48.0" prefWidth="185.0" />
+            <ComboBox fx:id="TheoryButtonDay3Time3" onAction="#actionForTheoryButtonDay3Time3" prefHeight="48.0" prefWidth="185.0" />
+            <ComboBox fx:id="TheoryButtonDay3Time5" onAction="#actionForTheoryButtonDay3Time5" prefHeight="48.0" prefWidth="185.0" />
+            <ComboBox fx:id="TheoryButtonDay3Time7" onAction="#actionForTheoryButtonDay3Time7" prefHeight="48.0" prefWidth="185.0" />
+            <ComboBox fx:id="TheoryButtonDay4Time1" onAction="#actionForTheoryButtonDay4Time1" prefHeight="48.0" prefWidth="185.0" />
+            <ComboBox fx:id="TheoryButtonDay4Time3" onAction="#actionForTheoryButtonDay4Time3" prefHeight="48.0" prefWidth="185.0" />
+            <ComboBox fx:id="TheoryButtonDay4Time5" onAction="#actionForTheoryButtonDay4Time5" prefHeight="48.0" prefWidth="185.0" />
+            <ComboBox fx:id="TheoryButtonDay4Time7" onAction="#actionForTheoryButtonDay4Time7" prefHeight="48.0" prefWidth="185.0" />
+         </children>
+      </TilePane>
+      <Label layoutX="23.0" layoutY="242.0" text="Sunday" />
+      <Label layoutX="21.0" layoutY="291.0" text="Monday" />
+      <Label layoutX="20.0" layoutY="339.0" text="Tuesday" />
+      <Label layoutX="11.0" layoutY="393.0" text="Wednesday" />
+      <ComboBox fx:id="courseShowComboBox" editable="true" layoutX="25.0" layoutY="56.0" onAction="#actionForComboBox" onMouseClicked="#addOptionToComboBox" prefHeight="25.0" prefWidth="384.0" promptText="Search course ..." />
+      <Label layoutX="25.0" layoutY="36.0" text="Avalable Course:" />
+      <Label layoutX="732.0" layoutY="36.0" text="Theory" />
+      <Label layoutX="792.0" layoutY="36.0" text="Lab" />
+      <Label fx:id="facultyTheoryCounter" layoutX="748.0" layoutY="60.0" text="-" />
+      <Label fx:id="facultyLabCounter" layoutX="798.0" layoutY="60.0" text="-" />
+      <Label layoutX="113.0" layoutY="188.0" prefHeight="17.0" prefWidth="109.0" text="8:30 AM - 11:10 AM" />
+      <Label layoutX="310.0" layoutY="188.0" prefHeight="17.0" prefWidth="109.0" text="11:20 AM - 2:10 PM" />
+      <Label layoutX="496.0" layoutY="188.0" prefHeight="17.0" prefWidth="109.0" text="2:10 PM - 4:50 PM" />
+      <Label layoutX="684.0" layoutY="188.0" prefHeight="17.0" prefWidth="109.0" text="5:00 PM - 7:40 PM" />
+      <Label fx:id="copyRightLabel" layoutX="365.0" layoutY="478.0" prefHeight="17.0" prefWidth="363.0" />
+      <Label layoutX="564.0" layoutY="70.0" text="Logged In :" />
+      <Label fx:id="activeFacultyNameLabel" layoutX="640.0" layoutY="70.0" prefHeight="17.0" prefWidth="70.0" />
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="850.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForChooseCourseMenuItem" text="Choose course" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForChooseSectionMenuItem" text="Choose section" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForCloseMenuItem" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Modify">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForChangePasswordMenuItem" text="Change password" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForHelpMenuItem" text="Help" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForAboutMenuItem" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</AnchorPane>

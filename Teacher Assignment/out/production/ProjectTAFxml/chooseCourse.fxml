@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.TilePane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChooseCourseAdminController">
+   <children>
+      <TableView fx:id="availableCourseTable" layoutX="27.0" layoutY="50.0" prefHeight="192.0" prefWidth="351.0">
+        <columns>
+          <TableColumn fx:id="availableCourseColumn" prefWidth="302.0" text="Available course's title" />
+        </columns>
+      </TableView>
+      <TableView fx:id="facultyNameTable" layoutX="27.0" layoutY="270.0" prefHeight="192.0" prefWidth="387.0">
+        <columns>
+          <TableColumn fx:id="facultyNameColumn" prefWidth="367.00001525878906" text="Faculty name" />
+        </columns>
+      </TableView>
+      <TableView fx:id="chosenCourseTable" layoutX="474.0" layoutY="50.0" prefHeight="192.0" prefWidth="351.0">
+         <columns>
+            <TableColumn fx:id="chosenCourseColumn" prefWidth="332.0" text="Chosen course's title" />
+         </columns>
+      </TableView>
+      <Button fx:id="addButton" layoutX="399.0" layoutY="98.0" mnemonicParsing="false" onAction="#actionForAddButton" prefHeight="25.0" prefWidth="59.0" text="Add" />
+      <Button fx:id="removeButton" layoutX="399.0" layoutY="160.0" mnemonicParsing="false" onAction="#actionForRemoveButton" text="Remove" />
+      <TilePane hgap="10.0" layoutX="474.0" layoutY="327.0" prefHeight="135.0" prefWidth="230.0" vgap="10.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="20.0" prefWidth="100.0" text="Faculty name:" textAlignment="CENTER" />
+            <Label fx:id="facultyNameLabel" alignment="CENTER" prefHeight="20.0" prefWidth="100.0" textAlignment="CENTER" />
+            <Label alignment="CENTER" prefHeight="20.0" prefWidth="100.0" text="Priority:" textAlignment="CENTER" />
+            <Label fx:id="facultyPriorityLabel" alignment="CENTER" prefHeight="20.0" prefWidth="100.0" textAlignment="CENTER" />
+            <Label alignment="CENTER" prefHeight="20.0" prefWidth="100.0" textAlignment="CENTER" />
+            <Label fx:id="facultyPositionLabel" alignment="CENTER" prefHeight="20.0" prefWidth="100.0" textAlignment="CENTER" />
+            <Label alignment="CENTER" prefHeight="20.0" prefWidth="100.0" textAlignment="CENTER" />
+            <Label alignment="CENTER" prefHeight="20.0" prefWidth="100.0" textAlignment="CENTER" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </TilePane>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="850.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForExportFullDataMenuItem" text="Export full data" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForLoadInputFromExcelFileMenuItem" text="Load input excel file" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForCloseMenuItem" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Course needs">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForChooseCourseMenuItem" text="Choose course" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForChooseSectionMenuItem" text="Choose section" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForSeeRequestMenuItem" text="See request" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForAutoGenerateMenuItem" text="Auto generate" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Section Ext">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForDropListMenuItem" text="Drop list" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForSectionNotEnrolledMenuItem" text="Sections not enrlled" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Observe">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForFullRoutineObserveMenuItem" text="Full routine observe" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForObserveByFacultyMenuItem" text="Observe by faculty" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Faculty">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForCreateNewFaculty" text="Add new faculty" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForModifyFaculty" text="Modify/Remove faculty" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForSetCourseLimitMenuItem" text="Set course limit" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForObserveFacultyAsListMenuItem" text="Observe faculty as list" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForHelpMenuItem" text="Help" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForAboutMenuItem" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <Label fx:id="copyRightLabel" layoutX="211.0" layoutY="478.0" prefHeight="17.0" prefWidth="321.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ObserveFacultyAsListController">
+   <children>
+      <TableView fx:id="facultyShowTable" layoutX="24.0" layoutY="61.0" onMouseEntered="#addFacultyNameList" prefHeight="397.0" prefWidth="305.0">
+        <columns>
+          <TableColumn fx:id="facultyNameColumn" prefWidth="94.0" text="Faculty name" />
+          <TableColumn fx:id="takenLimitTheoryColumn" prefWidth="114.0" text="Taken">
+               <columns>
+                  <TableColumn fx:id="takenTheoryColumn" prefWidth="48.0" text="Theory" />
+                  <TableColumn fx:id="takenLabColumn" prefWidth="49.0" text="Lab" />
+               </columns></TableColumn>
+            <TableColumn fx:id="takenLimitLabColumn" prefWidth="113.0" text="Limit">
+               <columns>
+                  <TableColumn fx:id="limitTheoryColumn" prefWidth="52.0" text="Theory" />
+                  <TableColumn fx:id="limitLabColumn" prefWidth="61.0" text="Lab" />
+               </columns></TableColumn>
+        </columns>
+      </TableView>
+      <Label fx:id="copyRightLabel" layoutX="190.0" layoutY="469.0" prefHeight="17.0" prefWidth="641.0" />
+      <Label layoutX="24.0" layoutY="40.0" prefHeight="17.0" prefWidth="162.0" text="Observe list of faculty :" />
+      <TableView fx:id="sectionShowTable" layoutX="336.0" layoutY="61.0" prefHeight="358.0" prefWidth="493.0">
+        <columns>
+          <TableColumn fx:id="courseNameColumn" prefWidth="261.0" text="Course Name" />
+          <TableColumn fx:id="sectionColumn" prefWidth="52.0" text="Section" />
+            <TableColumn fx:id="timeColumn" prefWidth="119.0" text="Time" />
+            <TableColumn fx:id="dayColumn" prefWidth="59.0" text="Day" />
+        </columns>
+      </TableView>
+      <Button layoutX="754.0" layoutY="433.0" mnemonicParsing="false" onAction="#actionForEditButton" prefHeight="25.0" prefWidth="75.0" text="Clear" />
+      <Label layoutX="336.0" layoutY="40.0" prefHeight="17.0" prefWidth="162.0" text="Taken courses :" />
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="850.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForExportFullDataMenuItem" text="Export full data" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForLoadInputFromExcelFileMenuItem" text="Load input excel file" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForCloseMenuItem" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Course needs">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForChooseCourseMenuItem" text="Choose course" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForChooseSectionMenuItem" text="Choose section" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForSeeRequestMenuItem" text="See request" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForAutoGenerateMenuItem" text="Auto generate" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Section Ext">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForDropListMenuItem" text="Drop list" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForSectionNotEnrolledMenuItem" text="Sections not enrlled" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Observe">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForFullRoutineObserveMenuItem" text="Full routine observe" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForObserveByFacultyMenuItem" text="Observe by faculty" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Faculty">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForCreateNewFaculty" text="Add new faculty" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForModifyFaculty" text="Modify/Remove faculty" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForSetCourseLimitMenuItem" text="Set course limit" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForObserveFacultyAsListMenuItem" text="Observe faculty as list" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForHelpMenuItem" text="Help" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForAboutMenuItem" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

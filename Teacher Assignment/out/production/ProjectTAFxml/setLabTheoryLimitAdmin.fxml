@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#addOptionToAvailableSectionsOfCourses" prefHeight="500.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SetLabTheoryLimitAdminController">
+   <children>
+      <Label fx:id="copyRightLabel" layoutX="326.0" layoutY="469.0" prefHeight="17.0" prefWidth="219.0" />
+      <TableView fx:id="showAllFacultyTheoryLabLimit" layoutX="27.0" layoutY="51.0" prefHeight="420.0" prefWidth="318.0">
+        <columns>
+          <TableColumn fx:id="facultyNameColumn" prefWidth="125.0" text="Faculty name" />
+            <TableColumn fx:id="priorityColumn" prefWidth="57.0" text="Priority" />
+            <TableColumn fx:id="theoryLimitColumn" prefWidth="60.0" text="Theory" />
+            <TableColumn fx:id="labLimitColumn" prefWidth="56.0" text="Lab" />
+        </columns>
+      </TableView>
+      <TextField fx:id="theoryEditorTextField" layoutX="457.0" layoutY="100.0" onKeyPressed="#keyActionForTheoryEditorTextField" prefHeight="25.0" prefWidth="91.0" promptText="Empty ..." />
+      <Label fx:id="facultyNameLabel" layoutX="461.0" layoutY="63.0" prefHeight="17.0" prefWidth="103.0" textAlignment="CENTER" />
+      <TextField fx:id="labEditorTextField" layoutX="457.0" layoutY="144.0" onKeyPressed="#keyActionForLabEditorTextField" prefHeight="25.0" prefWidth="91.0" promptText="Empty ..." />
+      <Label fx:id="selectedFacultyNameLbl1" layoutX="366.0" layoutY="63.0" prefHeight="17.0" prefWidth="84.0" text="Facculty name :" />
+      <Label fx:id="selectedFacultyNameLbl11" layoutX="366.0" layoutY="104.0" prefHeight="17.0" prefWidth="84.0" text="Theory :" />
+      <Label fx:id="selectedFacultyNameLbl111" layoutX="367.0" layoutY="148.0" prefHeight="17.0" prefWidth="84.0" text="Lab :" />
+      <TableView fx:id="showAllCoursesAvailableSections" layoutX="366.0" layoutY="266.0" prefHeight="203.0" prefWidth="465.0">
+        <columns>
+          <TableColumn fx:id="availableCoursesNameColumn" prefWidth="328.0" text="Course name" />
+          <TableColumn fx:id="availableSectionsColumn" prefWidth="118.0" text="Total section" />
+        </columns>
+      </TableView>
+      <Label layoutX="584.0" layoutY="104.0" text="Total available :" />
+      <Label layoutX="584.0" layoutY="145.0" text="Assigned :" />
+      <Label layoutX="688.0" layoutY="63.0" text="Theory" textAlignment="RIGHT" underline="true" />
+      <Label layoutX="771.0" layoutY="63.0" text="Lab" textAlignment="RIGHT" underline="true" />
+      <Separator layoutX="561.0" layoutY="48.0" orientation="VERTICAL" prefHeight="200.0" />
+      <Separator layoutX="589.0" layoutY="184.0" prefHeight="2.0" prefWidth="236.0" />
+      <Label layoutX="584.0" layoutY="200.0" prefHeight="25.0" prefWidth="84.0" text="Need more :" textAlignment="CENTER" wrapText="true" />
+      <Label fx:id="totalTheoryCounter" alignment="CENTER" layoutX="688.0" layoutY="104.0" prefHeight="17.0" prefWidth="37.0" textAlignment="CENTER" />
+      <Label fx:id="totalLabCounter" alignment="CENTER" layoutX="762.0" layoutY="104.0" prefHeight="17.0" prefWidth="37.0" textAlignment="CENTER" />
+      <Label fx:id="assignedTheoryCounter" alignment="CENTER" layoutX="688.0" layoutY="145.0" prefHeight="17.0" prefWidth="37.0" textAlignment="CENTER" />
+      <Label fx:id="assignedLabCounter" alignment="CENTER" layoutX="762.0" layoutY="145.0" prefHeight="17.0" prefWidth="37.0" textAlignment="CENTER" />
+      <Label fx:id="needMoreTheoryCounter" alignment="CENTER" layoutX="688.0" layoutY="204.0" prefHeight="17.0" prefWidth="37.0" textAlignment="CENTER" />
+      <Label fx:id="needMoreLabCounter" alignment="CENTER" layoutX="762.0" layoutY="204.0" prefHeight="17.0" prefWidth="37.0" textAlignment="CENTER" />
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="850.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForExportFullDataMenuItem" text="Export full data" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForLoadInputFromExcelFileMenuItem" text="Load input excel file" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForCloseMenuItem" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Course needs">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForChooseCourseMenuItem" text="Choose course" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForChooseSectionMenuItem" text="Choose section" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForSeeRequestMenuItem" text="See request" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForAutoGenerateMenuItem" text="Auto generate" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Section Ext">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForDropListMenuItem" text="Drop list" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForSectionNotEnrolledMenuItem" text="Sections not enrlled" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Observe">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForFullRoutineObserveMenuItem" text="Full routine observe" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForObserveByFacultyMenuItem" text="Observe by faculty" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Faculty">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForCreateNewFaculty" text="Add new faculty" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForModifyFaculty" text="Modify/Remove faculty" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForSetCourseLimitMenuItem" text="Set course limit" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForObserveFacultyAsListMenuItem" text="Observe faculty as list" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#actionForHelpMenuItem" text="Help" />
+                  <MenuItem mnemonicParsing="false" onAction="#actionForAboutMenuItem" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

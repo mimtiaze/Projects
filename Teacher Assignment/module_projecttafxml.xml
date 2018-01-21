@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_projecttafxml" default="compile.module.projecttafxml">
+  <dirname property="module.projecttafxml.basedir" file="${ant.file.module_projecttafxml}"/>
+  
+  <property name="module.jdk.home.projecttafxml" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.projecttafxml" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.projecttafxml" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.projecttafxml" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="projecttafxml.output.dir" value="${module.projecttafxml.basedir}/out/production/ProjectTAFxml"/>
+  <property name="projecttafxml.testoutput.dir" value="${module.projecttafxml.basedir}/out/test/ProjectTAFxml"/>
+  
+  <path id="projecttafxml.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="projecttafxml.module.production.classpath">
+    <path refid="${module.jdk.classpath.projecttafxml}"/>
+    <pathelement location="${basedir}/../poi-3.14/commons-codec-1.10.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/commons-logging-1.2.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/curvesapi-1.03.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/junit-4.12.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/log4j-1.2.17.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-examples-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-excelant-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-ooxml-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-ooxml-schemas-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-scratchpad-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/xmlbeans-2.6.0.jar"/>
+  </path>
+  
+  <path id="projecttafxml.runtime.production.module.classpath">
+    <pathelement location="${projecttafxml.output.dir}"/>
+    <pathelement location="${basedir}/../poi-3.14/commons-codec-1.10.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/commons-logging-1.2.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/curvesapi-1.03.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/junit-4.12.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/log4j-1.2.17.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-examples-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-excelant-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-ooxml-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-ooxml-schemas-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-scratchpad-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/xmlbeans-2.6.0.jar"/>
+  </path>
+  
+  <path id="projecttafxml.module.classpath">
+    <path refid="${module.jdk.classpath.projecttafxml}"/>
+    <pathelement location="${projecttafxml.output.dir}"/>
+    <pathelement location="${basedir}/../poi-3.14/commons-codec-1.10.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/commons-logging-1.2.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/curvesapi-1.03.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/junit-4.12.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/log4j-1.2.17.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-examples-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-excelant-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-ooxml-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-ooxml-schemas-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-scratchpad-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/xmlbeans-2.6.0.jar"/>
+  </path>
+  
+  <path id="projecttafxml.runtime.module.classpath">
+    <pathelement location="${projecttafxml.testoutput.dir}"/>
+    <pathelement location="${projecttafxml.output.dir}"/>
+    <pathelement location="${basedir}/../poi-3.14/commons-codec-1.10.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/commons-logging-1.2.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/curvesapi-1.03.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/junit-4.12.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/log4j-1.2.17.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-examples-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-excelant-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-ooxml-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-ooxml-schemas-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/poi-scratchpad-3.14-20160307.jar"/>
+    <pathelement location="${basedir}/../poi-3.14/xmlbeans-2.6.0.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.projecttafxml">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.projecttafxml">
+    <patternset refid="excluded.from.module.projecttafxml"/>
+  </patternset>
+  
+  <path id="projecttafxml.module.sourcepath">
+    <dirset dir="${module.projecttafxml.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.projecttafxml" depends="compile.module.projecttafxml.production,compile.module.projecttafxml.tests" description="Compile module ProjectTAFxml"/>
+  
+  <target name="compile.module.projecttafxml.production" depends="register.custom.compilers" description="Compile module ProjectTAFxml; production classes">
+    <mkdir dir="${projecttafxml.output.dir}"/>
+    <javac2 destdir="${projecttafxml.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.projecttafxml}/javac">
+      <compilerarg line="${compiler.args.projecttafxml}"/>
+      <bootclasspath refid="projecttafxml.module.bootclasspath"/>
+      <classpath refid="projecttafxml.module.production.classpath"/>
+      <src refid="projecttafxml.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.projecttafxml"/>
+    </javac2>
+    
+    <copy todir="${projecttafxml.output.dir}">
+      <fileset dir="${module.projecttafxml.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.projecttafxml.tests" depends="register.custom.compilers,compile.module.projecttafxml.production" description="compile module ProjectTAFxml; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.projecttafxml" description="cleanup module">
+    <delete dir="${projecttafxml.output.dir}"/>
+    <delete dir="${projecttafxml.testoutput.dir}"/>
+  </target>
+</project>
